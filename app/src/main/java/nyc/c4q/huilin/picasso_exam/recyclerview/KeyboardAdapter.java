@@ -1,7 +1,6 @@
 package nyc.c4q.huilin.picasso_exam.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,6 @@ import java.util.List;
 import nyc.c4q.huilin.picasso_exam.R;
 import nyc.c4q.huilin.picasso_exam.model.Pojos.Keys;
 
-import static android.content.ContentValues.TAG;
-
 /**
  * Created by huilin on 1/11/17.
  */
@@ -21,7 +18,6 @@ public class KeyboardAdapter extends RecyclerView.Adapter<KeyViewHolder> {
 
     public KeyboardAdapter(List<Keys> keyDataList) {
     this.keyDataList = keyDataList;
-        Log.d(TAG, "KeyboardAdapter: " + keyDataList.get(1).getTextColor());
     }
 
     @Override

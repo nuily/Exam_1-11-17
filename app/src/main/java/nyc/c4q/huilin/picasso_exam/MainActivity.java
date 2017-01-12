@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainFragment.class.getSimpleName();
-    private MainFragment mFragment;
+    protected MainFragment mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

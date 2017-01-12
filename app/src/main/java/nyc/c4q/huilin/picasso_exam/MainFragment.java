@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +21,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static android.content.ContentValues.TAG;
-
 /**
  * Created by huilin on 1/11/17.
  */
@@ -31,6 +28,7 @@ import static android.content.ContentValues.TAG;
 public class MainFragment extends Fragment{
 
     private List<Keys> keyDataList;
+    public static final String JSJROBOTICS = "http://jsjrobotics.nyc/";
     private RecyclerView rv;
 
     @Nullable
@@ -49,13 +47,12 @@ public class MainFragment extends Fragment{
         rv = (RecyclerView) view.findViewById(R.id.fragment_rv);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(new KeyboardAdapter(keyDataList));
-        Log.d(TAG, "onResponse: " + keyDataList.get(0).getName());
 
     }
 
     private void initRVwithKeysList(final View view) {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://jsjrobotics.nyc/")
+                .baseUrl(JSJROBOTICS)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
